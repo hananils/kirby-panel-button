@@ -3,7 +3,6 @@
 use Kirby\Cms\App as Kirby;
 
 Kirby::plugin('moritzebeling/kirby-panel-button', [
-
     'fields' => [
         'button' => [
             'props' => [
@@ -16,7 +15,7 @@ Kirby::plugin('moritzebeling/kirby-panel-button', [
                 'url' => function (string $url) {
                     return $url;
                 },
-                'theme' => function (string $theme = null) {
+                'theme' => function (?string $theme = null) {
                     return $theme;
                 },
                 'icon' => function (string $icon = 'refresh') {
@@ -28,26 +27,26 @@ Kirby::plugin('moritzebeling/kirby-panel-button', [
                 'reload' => function (bool $reload = false) {
                     return $reload;
                 },
-                'help' => function (string $help = null) {
+                'help' => function (?string $help = null) {
                     return $help;
-                },
+                }
             ],
             'computed' => [
                 'text' => function () {
-                    if( $text = $this->text ){
+                    if ($text = $this->text) {
                         $text = $this->model()->toSafeString($text);
                         return $text;
                     }
                 },
                 'url' => function () {
-                    if( $url = $this->url ){
+                    if ($url = $this->url) {
                         $url = $this->model()->toSafeString($url);
                         return $url;
                     }
                 }
-            ],
+            ]
         ]
-    ],
+    ]
 
     // 'sections' => [
     //     'button' => [
@@ -73,5 +72,4 @@ Kirby::plugin('moritzebeling/kirby-panel-button', [
     //         ],
     //     ]
     // ],
-
 ]);
