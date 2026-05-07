@@ -71,10 +71,6 @@ export default {
 </script>
 
 <style>
-p {
-    margin-bottom: var(--spacing-2);
-}
-
 .k-button-field-button {
     display: block;
     width: 100%;
